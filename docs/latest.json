@@ -1,9 +1,9 @@
 {
-  "version": "0.1.482",
-  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.482/MultiCut-0.1.482-arm64.dmg",
-  "notes": "MultiCut's website now shows what it does for multicam DJ sets, step by step, with real screens from the latest version: https://aaron-wickham.github.io/multicut-releases/",
-  "size": 516795870,
+  "version": "0.1.484",
+  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.484/MultiCut-0.1.484-arm64.dmg",
+  "notes": "Small fixes and improvements behind the scenes.",
+  "size": 516795811,
   "items": [
-    "MultiCut's website now shows what it does for multicam DJ sets, step by step, with real screens from the latest version: https://aaron-wickham.github.io/multicut-releases/"
+    "Small fixes and improvements behind the scenes."
   ]
 }
