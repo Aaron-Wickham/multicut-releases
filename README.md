@@ -11,7 +11,7 @@ MultiCut lines your cameras up with the mixer recording, finds the drops, and bu
 
 ## Download
 
-**[Download the latest version](https://github.com/Aaron-Wickham/multicut-releases/releases/latest)**: under **Assets**, the `MultiCut-…-arm64.dmg`.
+**[Download MultiCut](https://aaron-wickham.github.io/multicut-releases/)**, or from the [latest release](https://github.com/Aaron-Wickham/multicut-releases/releases/latest): under **Assets**, the `MultiCut-…-arm64.dmg`.
 
 1. Open the `.dmg` and drag **MultiCut** to **Applications**.
 2. Open MultiCut. The first time, if macOS says it can't check the app: **System Settings › Privacy & Security › Open Anyway**.
@@ -26,4 +26,4 @@ MultiCut checks for a newer version when it starts, and from **Help › Check fo
 
 ## About this repository
 
-This repository holds MultiCut's installers only; the app's source is private. A new version is published here automatically each time a change lands, numbered `0.1.<build>`.
+This repository holds MultiCut's installers and its download page (`docs/`, on GitHub Pages) only; the app's source is private. A new version is published here automatically each time a change lands, numbered `0.1.<build>`.
