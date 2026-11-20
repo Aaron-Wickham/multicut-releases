@@ -5,9 +5,13 @@
   </picture>
 </p>
 
-<p align="center"><b>Your DJ set, cut on every drop.</b></p>
+<p align="center"><b>Multicam DJ sets, cut on every drop.</b></p>
 
-MultiCut lines your cameras up with the mixer recording, finds the drops, and builds the multicam edit, cut on the beat with zooms on the drops. You finish it in Premiere Pro. Everything runs on your Mac; your files never leave it.
+MultiCut is a Mac app for editing DJ sets filmed on several cameras. It syncs every camera to the mixer recording, finds the drops in the music, and builds the multicam edit, cut on the beat with zooms into every drop, plus vertical clips for socials. Premiere Pro opens it finished. Everything runs on your Mac; your footage never leaves it.
+
+<p align="center"><img src="docs/shots/cameras.jpg" alt="MultiCut on a real set: both cameras side by side, the song map with every drop and the cut on one timeline." width="880"></p>
+
+**[See how it works](https://aaron-wickham.github.io/multicut-releases/)**
 
 ## Download
 
