@@ -1,10 +1,9 @@
 {
-  "version": "0.1.480",
-  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.480/MultiCut-0.1.480-arm64.dmg",
-  "notes": "A camera with no footage in a cut is no longer offered for that cut, so the camera you pick is always the one on screen.; MultiCut has a download page: https://aaron-wickham.github.io/multicut-releases/",
-  "size": 516795944,
+  "version": "0.1.482",
+  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.482/MultiCut-0.1.482-arm64.dmg",
+  "notes": "MultiCut's website now shows what it does for multicam DJ sets, step by step, with real screens from the latest version: https://aaron-wickham.github.io/multicut-releases/",
+  "size": 516795870,
   "items": [
-    "A camera with no footage in a cut is no longer offered for that cut, so the camera you pick is always the one on screen.",
-    "MultiCut has a download page: https://aaron-wickham.github.io/multicut-releases/"
+    "MultiCut's website now shows what it does for multicam DJ sets, step by step, with real screens from the latest version: https://aaron-wickham.github.io/multicut-releases/"
   ]
 }

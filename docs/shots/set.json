@@ -1,0 +1,114 @@
+{
+ "name": "#013",
+ "duration": 2024,
+ "music": [
+  12.143,
+  2014.88
+ ],
+ "bpm": 140,
+ "beats": 4672,
+ "drops": [
+  28.13,
+  124.56,
+  275.44,
+  385.14,
+  481.16,
+  580.58,
+  703.98,
+  800.04,
+  812.01,
+  868.51,
+  1053.75,
+  1149.82,
+  1336.63,
+  1444.62,
+  1485.77,
+  1526.93,
+  1568.07,
+  1609.21,
+  1636.64,
+  1718.93,
+  1883.74,
+  1911.16,
+  1966.02
+ ],
+ "songs": [
+  {
+   "start": 13.14,
+   "end": 110.87,
+   "name": "Hot Meal Records – Ollie Lishman - DROP IT DOWN (Extended Mix)"
+  },
+  {
+   "start": 110.87,
+   "end": 246.3,
+   "name": "ZUKE – San Andreas Dub [FREE DOWNLOAD]"
+  },
+  {
+   "start": 246.3,
+   "end": 470.87,
+   "name": "jbsc – BACK2BACK (FREE DL)"
+  },
+  {
+   "start": 470.87,
+   "end": 580.56,
+   "name": "Hutcher – CALABRIA DUB (FREE DL)"
+  },
+  {
+   "start": 580.56,
+   "end": 727.95,
+   "name": "Social Club – Aint No Other Man - Social Club. Remix (Free Download)"
+  },
+  {
+   "start": 727.95,
+   "end": 808.61,
+   "name": "Southpoint – SHUFFA - Mix & Blend"
+  },
+  {
+   "start": 808.61,
+   "end": 947.44,
+   "name": "Britto – Jump Up The Jam [FREE DL]"
+  },
+  {
+   "start": 947.44,
+   "end": 1072.77,
+   "name": "909 RACING TEAM – Ron Carroll - Back Together (909 RACING TEAM Edit) (FREE DOWNLOAD)"
+  },
+  {
+   "start": 1072.77,
+   "end": 1161.8,
+   "name": "Startup Bro – 5 am in Queens"
+  },
+  {
+   "start": 1161.8,
+   "end": 1280.06,
+   "name": "LEPS – KLUBBHEADS - DISCOHOPPING (LEPS’ EDIT) [FREE DL]"
+  },
+  {
+   "start": 1280.06,
+   "end": 1485.77,
+   "name": "KOSTER – UPSIDE DOWN [FREE DL]"
+  },
+  {
+   "start": 1485.77,
+   "end": 1622.92,
+   "name": "SKEPTIC – Jump Around (Speed Garage Dub)(FREE DL)"
+  },
+  {
+   "start": 1622.92,
+   "end": 1784.06,
+   "name": "Club Angel – Lemon"
+  },
+  {
+   "start": 1784.06,
+   "end": 1875.08,
+   "name": "Me & George – Party Left"
+  },
+  {
+   "start": 1875.08,
+   "end": 2015.31,
+   "name": "22 Interns – Billie Eilish - Chihiro (22 Interns Edit) [Free Download]"
+  }
+ ],
+ "analysis_s": 231,
+ "cuts": 356
+}

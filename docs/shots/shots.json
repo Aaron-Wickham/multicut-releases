@@ -1,0 +1,68 @@
+{
+  "taken": "2026-11-20",
+  "shots": [
+    {
+      "name": "cuts",
+      "file": "cuts.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "The Cuts step: the program monitor on a drop, the song map, the cut on the beat and both cameras' footage on one timeline."
+    },
+    {
+      "name": "drops",
+      "file": "drops.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "The Drops step: each drop the music analysis found, with a picture of the moment, to hear and answer yes or no."
+    },
+    {
+      "name": "sync",
+      "file": "sync.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "The Sync step: every camera recording lined up with the mixer recording, each marked Synced."
+    },
+    {
+      "name": "motion",
+      "file": "motion.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "The Motion step: slow zooms that build into each drop, per camera."
+    },
+    {
+      "name": "export",
+      "file": "export.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "The Export step: the Premiere Pro project, the crowd mix, matched colour and YouTube chapters."
+    },
+    {
+      "name": "clips",
+      "file": "clips.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "The Clips step: vertical clips for socials around the drops."
+    },
+    {
+      "name": "import",
+      "file": "import.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "The Import step: the mixer recording and each camera's files from the set folder."
+    },
+    {
+      "name": "clip",
+      "file": "clip.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "A vertical 9:16 clip around a drop, framed on the DJ, as it goes to Instagram or TikTok."
+    },
+    {
+      "name": "cameras",
+      "file": "cameras.jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "Every camera side by side on the same moment of the set, lined up to the mixer recording."
+    }
+  ]
+}

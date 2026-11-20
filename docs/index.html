@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'">
 <meta name="referrer" content="no-referrer">
-<title>Download MultiCut</title>
-<meta name="description" content="MultiCut lines your cameras up with the mixer recording, finds the drops, and builds the multicam edit. You finish it in Premiere.">
+<title>MultiCut · Multicam DJ sets, cut on every drop</title>
+<meta name="description" content="MultiCut edits multicam DJ sets on your Mac: it syncs every camera to the mixer recording, finds the drops, cuts on the beat and hands Premiere Pro a finished multicam edit, plus vertical clips for socials.">
+<meta property="og:title" content="MultiCut · Multicam DJ sets, cut on every drop">
+<meta property="og:description" content="Every camera synced to the mixer. Every drop found. The edit cut on the beat and finished in Premiere.">
+<meta property="og:image" content="shots/cameras.jpg">
 <meta name="theme-color" content="#070708">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.png">
@@ -15,83 +18,235 @@
 <script src="site.js" defer></script>
 </head>
 <body>
-<header class="wrap top">
-  <a class="brand" href="./" aria-label="MultiCut">
-    <svg width="24" height="24" viewBox="0 0 256 256" aria-hidden="true"><g fill="#FFB23E"><path d="M80 23H117V199H80A40 40 0 0 1 40 159V63A40 40 0 0 1 80 23Z"/><path d="M139 53H176A40 40 0 0 1 216 93V189A40 40 0 0 1 176 229H139V53Z"/></g></svg>
-    <span>MultiCut</span>
-  </a>
-  <span class="grow"></span>
-  <nav class="nav" aria-label="On this page">
-    <a href="#how">How it works</a>
-    <a href="#notes" data-notes hidden>Release notes</a>
-  </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="./" aria-label="MultiCut, home">
+      <svg width="22" height="22" viewBox="0 0 256 256" aria-hidden="true"><g class="mark"><path d="M80 23H117V199H80A40 40 0 0 1 40 159V63A40 40 0 0 1 80 23Z"/><path d="M139 53H176A40 40 0 0 1 216 93V189A40 40 0 0 1 176 229H139V53Z"/></g></svg>
+      <span>MultiCut</span>
+    </a>
+    <nav class="nav" aria-label="On this page">
+      <a href="#why">Why</a>
+      <a href="#how">How it works</a>
+      <a href="#inside">Under the hood</a>
+      <a href="#premiere">Premiere</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn-quiet top-dl" href="#download-band">Download</a>
+  </div>
 </header>
 
-<main>
-  <section class="wrap hero">
-    <img src="icon.svg" width="112" height="112" alt="MultiCut app icon">
-    <h1>Your DJ set, cut on every drop.</h1>
-    <p class="sub">MultiCut lines your cameras up with the mixer recording, finds the drops, and builds the multicam edit. You finish it in Premiere.</p>
-    <a class="download is-off" id="download" aria-disabled="true">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>
-      <span id="download-label">Coming soon</span>
-    </a>
-    <span class="meta" id="meta"><span class="nowrap">Apple silicon</span> · <span class="nowrap">macOS 13 or later</span></span>
+<main id="main">
+  <!-- 1. The promise -->
+  <section class="hero">
+    <div class="wrap hero-text">
+      <p class="eyebrow">For multicam DJ sets</p>
+      <h1><span class="line">Every camera. Every drop.</span><br><span class="line soft">Cut on the beat.</span></h1>
+      <p class="lede">You filmed the set on two, three, four cameras. MultiCut lines every one of them up with the mixer recording, finds the drops, and builds the multicam edit on the beat. Premiere Pro opens it finished.</p>
+      <div class="cta">
+        <a class="download is-off" id="download" aria-disabled="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>
+          <span id="download-label">Coming soon</span>
+        </a>
+        <a class="link-arrow" href="#how">See how it works</a>
+      </div>
+      <p class="meta" id="meta"><span class="nowrap">Apple silicon</span> · <span class="nowrap">macOS 13 or later</span></p>
+    </div>
+    <div class="wrap hero-stage">
+      <figure class="window">
+        <img src="shots/cameras.jpg" width="2880" height="1800" alt="MultiCut's Cuts step on a real set: both cameras side by side on the same moment, the song map with every drop, the cut and each camera's footage on one timeline." fetchpriority="high">
+      </figure>
+      <figure class="phone" aria-label="A vertical clip">
+        <div class="phone-screen" role="img" aria-label="A 9:16 clip from the same set, framed on the DJ"></div>
+        <figcaption>9:16 clip, framed on the DJ</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="wrap" aria-label="The app">
-    <img class="shot" src="screenshot.jpg" width="2880" height="1800" alt="MultiCut's Drops step on a real set: the camera picture, the song map with every drop, and the list of drops to check">
+  <!-- 2. The signature: one real set -->
+  <section class="wrap set" aria-labelledby="set-title">
+    <div class="set-head">
+      <h2 id="set-title" class="h-small">One real set, read by MultiCut</h2>
+      <p class="set-facts" id="set-facts"><span>#013</span><span>33:44</span><span>15 songs</span><span>23 drops</span><span>140 BPM</span></p>
+    </div>
+    <div class="strip" id="strip" role="img" aria-label="The set's 15 songs as a strip across its 33 minutes, with its 23 drops marked."></div>
+    <div class="strip-scale" id="strip-scale" aria-hidden="true"></div>
+    <p class="caption" id="set-caption">Every song and drop above came from the audio alone, in minutes on an Apple silicon Mac. Then the whole edit, each cut on a beat, in under a second.</p>
   </section>
 
-  <section class="wrap how" id="how">
-    <h2>How it works</h2>
-    <ol class="steps">
-      <li>
-        <span class="n">1</span>
-        <span class="t">Point it at your set folder</span>
-        <span class="d">The mixer recording and every camera. It syncs them to the music.</span>
+  <!-- 3. Why -->
+  <section class="wrap why" id="why" aria-labelledby="why-title">
+    <p class="eyebrow">Why MultiCut</p>
+    <h2 id="why-title">A DJ set isn't a wedding or a podcast.</h2>
+    <p class="lede narrow">General editors treat it like one. MultiCut knows the music: where the beat is, where the drop lands, which camera has the DJ when it does.</p>
+    <div class="why-grid">
+      <article class="why-card">
+        <span class="why-k">The cameras drift</span>
+        <h3>Synced to the mixer, not to each other</h3>
+        <p>GoPros overheat, restart and split files. Every recording is matched to the mixer recording, drift included. On our test set every check point landed within one frame.</p>
+      </article>
+      <article class="why-card">
+        <span class="why-k">The drops are the moments</span>
+        <h3>Found in the music, checked by you</h3>
+        <p>MultiCut listens to the bass and the kick coming back to find each drop. You hear every one and answer yes or no; the edit is built around the ones you keep.</p>
+      </article>
+      <article class="why-card">
+        <span class="why-k">Cutting by hand takes all night</span>
+        <h3>Cut on the beat, every time</h3>
+        <p>Cuts land on beats and kicks, never on a beat it isn't sure of. Pick the camera mix; lock, move or re-pick any cut. A 33-minute set is cut in under a second.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. How it works -->
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2 id="how-title">Seven steps from the folder to Premiere.</h2>
+    </div>
+    <ol class="wrap steps">
+      <li class="step">
+        <div class="step-text">
+          <span class="step-n">01</span>
+          <h3>Import</h3>
+          <p>Point it at the set folder: the mixer recording and each camera's files. Split camera chapters are joined, and the tracklist names every song.</p>
+        </div>
+        <figure class="window"><img src="shots/import.jpg" width="2880" height="1800" loading="lazy" alt="The Import step: the mixer recording, both cameras and the tracklist from the set folder."></figure>
       </li>
-      <li>
-        <span class="n">2</span>
-        <span class="t">Check every drop</span>
-        <span class="d">It finds them; you hear each one and say yes or no.</span>
+      <li class="step">
+        <div class="step-text">
+          <span class="step-n">02</span>
+          <h3>Sync</h3>
+          <p>Each recording is lined up with the mixer recording, drift corrected and checked against the camera clock. Each one reads Synced, or asks you to look.</p>
+        </div>
+        <figure class="window"><img src="shots/sync.jpg" width="2880" height="1800" loading="lazy" alt="The Sync step: every camera recording lined up with the mixer recording, each marked Synced."></figure>
       </li>
-      <li>
-        <span class="n">3</span>
-        <span class="t">Open the edit in Premiere</span>
-        <span class="d">Cuts on the beat, zooms on the drops, songs marked. Clips for socials too.</span>
+      <li class="step">
+        <div class="step-text">
+          <span class="step-n">03</span>
+          <h3>Drops</h3>
+          <p>The music is analysed: beats, bars, songs and the drops. You hear each drop on the picture and answer yes or no. Missed one? Mark it with D.</p>
+        </div>
+        <figure class="window"><img src="shots/drops.jpg" width="2880" height="1800" loading="lazy" alt="The Drops step: a drop to check with yes or no, the song map and the mixer's waveform."></figure>
+      </li>
+      <li class="step">
+        <div class="step-text">
+          <span class="step-n">04</span>
+          <h3>Cuts</h3>
+          <p>The multicam edit, cut on the beat with the camera mix you set, per song or per drop if you like. Where a camera runs out of picture another takes over: never a black frame.</p>
+        </div>
+        <figure class="window"><img src="shots/cuts.jpg" width="2880" height="1800" loading="lazy" alt="The Cuts step: the program monitor on a drop, the song map and the cut on the beat."></figure>
+      </li>
+      <li class="step">
+        <div class="step-text">
+          <span class="step-n">05</span>
+          <h3>Motion</h3>
+          <p>Slow zooms that build into each drop and release on it, per camera: full, half or off. One setting means the same at every energy.</p>
+        </div>
+        <figure class="window"><img src="shots/motion.jpg" width="2880" height="1800" loading="lazy" alt="The Motion step: zooms that build into each drop, set per drop."></figure>
+      </li>
+      <li class="step">
+        <div class="step-text">
+          <span class="step-n">06</span>
+          <h3>Export</h3>
+          <p>One Premiere Pro project with the cut, the mixer audio, the crowd from the room camera, matched colour and every song and drop as a marker. Open in Premiere hands it over.</p>
+        </div>
+        <figure class="window"><img src="shots/export.jpg" width="2880" height="1800" loading="lazy" alt="The Export step: exported to Premiere, with Open in Premiere and the YouTube chapters."></figure>
+      </li>
+      <li class="step">
+        <div class="step-text">
+          <span class="step-n">07</span>
+          <h3>Clips</h3>
+          <p>Vertical 9:16 clips around every drop, framed to follow the DJ, cut and zoomed like the set. Export one or all.</p>
+        </div>
+        <figure class="window"><img src="shots/clip.jpg" width="2880" height="1800" loading="lazy" alt="A vertical clip around a drop: the 9:16 frame on the DJ and the clip's own cuts."></figure>
       </li>
     </ol>
   </section>
 
-  <section class="wrap cards">
-    <div class="card">
-      <h3>What you need</h3>
-      <ul>
-        <li>A Mac with Apple silicon (M1 or newer)</li>
-        <li>The recording from your mixer, and your camera files</li>
-        <li>Premiere Pro, to finish the edit</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Opening it the first time</h3>
-      <p>Drag MultiCut to Applications and open it. If macOS says it can't check it: System Settings › Privacy &amp; Security › Open Anyway.</p>
+  <!-- 5. Under the hood -->
+  <section class="wrap inside" id="inside" aria-labelledby="inside-title">
+    <p class="eyebrow">Under the hood</p>
+    <h2 id="inside-title">Built on the audio. Checked on real sets.</h2>
+    <dl class="facts">
+      <div class="fact"><dt>Sync</dt><dd>Each camera's sound is matched to the mixer recording across the whole set, drift included. On our test set, every check point was within one frame (33 ms).</dd></div>
+      <div class="fact"><dt>Beat grid</dt><dd>A beat tracker maps every beat and bar; kick hits back it up where the beat is unclear. Stretches it isn't sure of are marked, and no cut lands on them.</dd></div>
+      <div class="fact"><dt>Drops</dt><dd>The mix is split into stems, so MultiCut hears the bass and the kick come back. Each drop is timed to the bar it lands on.</dd></div>
+      <div class="fact"><dt>Never black</dt><dd>Cameras stop, restart and run out. The edit always has picture: another camera takes over, and where none has any, a frame holds.</dd></div>
+      <div class="fact"><dt>Apple silicon</dt><dd>Analysis runs on the Mac's GPU. A 33-minute set: about four minutes to analyse, under a second to cut.</dd></div>
+      <div class="fact"><dt>Private</dt><dd>Everything runs on your Mac. Your footage and your music never leave it, and your original files are never changed.</dd></div>
+    </dl>
+  </section>
+
+  <!-- 6. Premiere and clips -->
+  <section class="wrap premiere" id="premiere" aria-labelledby="premiere-title">
+    <div class="split">
+      <div>
+        <p class="eyebrow">Finish where you already work</p>
+        <h2 id="premiere-title">Premiere opens it finished.</h2>
+        <ul class="ticks">
+          <li>The multicam cut, on a sequence at your camera's size and rate</li>
+          <li>The mixer recording as the sound, with the crowd from the room camera under it</li>
+          <li>Colour matched between cameras</li>
+          <li>Every song and drop as a marker</li>
+          <li>YouTube chapters, ready to paste</li>
+          <li>Vertical clips as their own sequences</li>
+        </ul>
+      </div>
+      <figure class="window"><img src="shots/export.jpg" width="2880" height="1800" loading="lazy" alt="Exported to Premiere: the file, Open in Premiere and Show in Finder."></figure>
     </div>
   </section>
 
-  <section class="wrap notes" id="notes" data-notes hidden>
-    <h2 id="notes-title">Release notes</h2>
+  <!-- 7. Needs + FAQ -->
+  <section class="wrap faq" id="faq" aria-labelledby="faq-title">
+    <div class="split split-top">
+      <div>
+        <p class="eyebrow">What you need</p>
+        <h2 class="h-small">A Mac, the recordings, Premiere.</h2>
+        <ul class="ticks">
+          <li>A Mac with Apple silicon (M1 or newer), macOS 13 or later</li>
+          <li>The recording from your mixer</li>
+          <li>Each camera's files, as they came off the card</li>
+          <li>Premiere Pro, to finish the edit</li>
+        </ul>
+      </div>
+      <div>
+        <h2 id="faq-title" class="h-small">Questions</h2>
+        <details><summary>Which cameras work?</summary><p>Any camera that records sound: MultiCut syncs by the sound it hears. It's tested on GoPro HERO13 Blacks, including files split into chapters and cameras that restarted mid-set.</p></details>
+        <details><summary>How many cameras?</summary><p>As many as you filmed with. Sets are tested on two; the number keys put any of the first six on a cut.</p></details>
+        <details><summary>Do I need the mixer recording?</summary><p>Yes. It's the clock everything syncs to and the sound of the finished edit.</p></details>
+        <details><summary>Does it upload anything?</summary><p>No. Analysis and editing run on your Mac, offline.</p></details>
+        <details><summary>Windows or Intel Macs?</summary><p>Not yet: Apple silicon Macs only.</p></details>
+        <details><summary>The first time, macOS says it can't check the app.</summary><p>Open System Settings › Privacy &amp; Security and choose Open Anyway. That happens once.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Download -->
+  <section class="band" id="download-band" aria-labelledby="band-title">
+    <div class="wrap band-row">
+      <div>
+        <h2 id="band-title">Your next set, cut on every drop.</h2>
+        <p class="meta" id="meta-2">For Mac · Apple silicon · macOS 13 or later</p>
+      </div>
+      <a class="btn-outline" id="download-2" href="#">Download for Mac</a>
+    </div>
+  </section>
+
+  <section class="wrap notes" id="notes" data-notes hidden aria-labelledby="notes-title">
+    <h2 id="notes-title" class="h-small">Release notes</h2>
     <ul id="notes-list"></ul>
+    <p><a href="https://github.com/Aaron-Wickham/multicut-releases/releases">Every release</a></p>
   </section>
 </main>
 
 <footer class="foot">
-  <div class="wrap">
+  <div class="wrap foot-row">
     <span>© 2026 MultiCut</span>
     <span class="grow"></span>
     <a href="#notes" data-notes hidden>Release notes</a>
     <a href="licences.html">Licences</a>
-    <span>Your files never leave your Mac.</span>
+    <span>Screens shown are the current version, on a real set.</span>
   </div>
 </footer>
 </body>
