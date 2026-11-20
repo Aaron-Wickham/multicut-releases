@@ -1,0 +1,115 @@
+/* MultiCut's download page: the Booth tokens (DESIGN.md), Inter from fonts/. Nothing from elsewhere. */
+@font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url("fonts/Inter-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-display: swap; src: url("fonts/Inter-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-display: swap; src: url("fonts/Inter-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 700; font-display: swap; src: url("fonts/Inter-Bold.woff2") format("woff2"); }
+
+:root {
+  --bg: #070708;
+  --surface: #111113;
+  --border: #26262b;
+  --text: #f2f2f0;
+  --text-muted: #a1a1a8;
+  --accent: #ffb23e;
+  --accent-ink: #1a1000;
+  --font-ui: "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", monospace;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.5 var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+a { color: var(--text); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+[hidden] { display: none !important; }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+@media (max-width: 480px) { .wrap { padding-left: 16px; padding-right: 16px; } }
+.grow { flex: 1; }
+
+/* ---- header ---- */
+.top { padding-top: 24px; padding-bottom: 24px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 18px; font-weight: 700; letter-spacing: -0.2px; }
+.brand:hover { color: var(--text); }
+.nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.nav a { font-size: 14px; color: var(--text-muted); text-decoration: none; }
+.nav a:hover { color: var(--accent); }
+
+/* ---- hero ---- */
+.hero { padding-top: 56px; padding-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+.hero h1 { margin: 0; max-width: 760px; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; font-weight: 700; letter-spacing: -1px; }
+.sub { margin: 0; max-width: 620px; font-size: 18px; color: var(--text-muted); }
+.download {
+  margin-top: 8px;
+  min-height: 48px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.download:hover { color: var(--accent-ink); filter: brightness(1.06); }
+.download.is-off { background: var(--surface); color: var(--text-muted); border: 1px solid var(--border); cursor: default; filter: none; }
+.meta { font-size: 13px; color: var(--text-muted); }
+.nowrap { white-space: nowrap; }
+
+/* ---- the app ---- */
+.shot { width: 100%; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+
+/* ---- how it works ---- */
+.how { padding-top: 72px; padding-bottom: 24px; }
+h2 { margin: 0 0 24px; font-size: 24px; font-weight: 600; line-height: 1.25; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
+.steps li, .card { border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.steps .n { font-size: 13px; font-weight: 600; color: var(--accent); }
+.steps .t { font-weight: 600; }
+.steps .d { font-size: 14px; color: var(--text-muted); }
+
+.cards { padding-top: 48px; padding-bottom: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; }
+.card { gap: 10px; }
+.card h3 { margin: 0; font-size: 16px; font-weight: 600; }
+.card ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--text-muted); }
+.card p { margin: 0; font-size: 14px; color: var(--text-muted); }
+
+/* ---- release notes ---- */
+.notes { padding-bottom: 48px; }
+.notes ul { margin: 0; padding-left: 20px; max-width: 720px; font-size: 15px; line-height: 1.5; color: var(--text-muted); display: grid; gap: 8px; }
+
+/* ---- footer ---- */
+.foot { border-top: 1px solid var(--border); }
+.foot .wrap { padding-top: 24px; padding-bottom: 24px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: var(--text-muted); }
+.foot a { color: var(--text-muted); }
+.foot a:hover { color: var(--accent); }
+
+/* ---- licences.html ---- */
+.licences { padding-top: 24px; padding-bottom: 56px; max-width: 760px; }
+.licences h1 { margin: 0 0 4px; font-size: 28px; font-weight: 700; letter-spacing: -0.4px; }
+.licences .lede { margin: 0 0 24px; font-size: 14px; color: var(--text-muted); }
+.parts { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--border); }
+.parts li { padding: 12px 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px; }
+.parts .what { font-weight: 500; }
+.parts .lic { text-align: right; font-size: 14px; }
+.parts .who { grid-column: 1 / -1; font-size: 13px; color: var(--text-muted); }
+.licences h2 { margin: 32px 0 8px; font-size: 16px; }
+.licences details { border-bottom: 1px solid var(--border); padding: 10px 0; }
+.licences summary { font-size: 14px; cursor: pointer; }
+.licences summary:hover { color: var(--accent); }
+.licences pre { margin: 10px 0 4px; white-space: pre-wrap; font: 12px/1.5 var(--font-mono); color: var(--text-muted); }
+.licences details p { font-size: 14px; color: var(--text-muted); }
