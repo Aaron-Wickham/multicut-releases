@@ -116,6 +116,14 @@ h3 { font-size: 21px; line-height: 1.3; font-weight: 600; letter-spacing: -0.01e
 .strip-scale span:first-child { transform: none; }
 .set .caption { margin-top: 18px; }
 
+/* the video */
+.watch { margin-top: var(--section); }
+.watch-frame { margin-top: 40px; }
+.watch-frame video { display: block; width: 100%; height: auto; background: var(--surface); }
+.sound { position: absolute; right: 16px; bottom: 16px; height: 36px; padding: 0 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); background: color-mix(in oklab, var(--bg) 70%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--text); font: 500 14px var(--font); cursor: pointer; }
+.sound:hover { background: var(--surface-2); }
+.watch .caption { margin-top: 18px; }
+
 /* why */
 .why { margin-top: var(--section); }
 .why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin-top: 56px; }

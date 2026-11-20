@@ -147,4 +147,23 @@ if (typeof module !== "undefined") module.exports = { clock, formatSize, metaLin
 else {
   show();
   showSet();
+  watch();
+}
+
+/** The drop video: muted on a loop (Sound on toggles it); still for people who asked for less motion. */
+function watch() {
+  const video = document.getElementById("drop-video");
+  const sound = document.getElementById("sound");
+  if (!video || !sound) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    video.removeAttribute("autoplay");
+    video.pause();
+    video.controls = true;
+  }
+  sound.addEventListener("click", () => {
+    video.muted = !video.muted;
+    if (!video.muted && video.paused) video.play().catch(() => {});
+    sound.setAttribute("aria-pressed", String(!video.muted));
+    sound.textContent = video.muted ? "Sound on" : "Sound off";
+  });
 }

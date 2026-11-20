@@ -1,9 +1,9 @@
 {
-  "version": "0.1.484",
-  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.484/MultiCut-0.1.484-arm64.dmg",
-  "notes": "Small fixes and improvements behind the scenes.",
-  "size": 516795811,
+  "version": "0.1.486",
+  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.486/MultiCut-0.1.486-arm64.dmg",
+  "notes": "The website shows MultiCut cutting a real drop, with the mixer's sound.",
+  "size": 516795964,
   "items": [
-    "Small fixes and improvements behind the scenes."
+    "The website shows MultiCut cutting a real drop, with the mixer's sound."
   ]
 }

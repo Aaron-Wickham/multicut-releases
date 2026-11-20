@@ -58,6 +58,15 @@
       "alt": "A vertical 9:16 clip around a drop, framed on the DJ, as it goes to Instagram or TikTok."
     },
     {
+      "name": "drop",
+      "file": "drop.mp4",
+      "poster": "drop.jpg",
+      "width": 1440,
+      "height": 900,
+      "start": 270.44,
+      "alt": "The app playing through a drop: the program monitor cuts between cameras on the beat and the zoom releases on the drop."
+    },
+    {
       "name": "cameras",
       "file": "cameras.jpg",
       "width": 2880,
