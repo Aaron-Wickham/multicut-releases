@@ -1,9 +1,14 @@
 {
-  "version": "0.1.486",
-  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.486/MultiCut-0.1.486-arm64.dmg",
-  "notes": "The website shows MultiCut cutting a real drop, with the mixer's sound.",
-  "size": 516795964,
+  "version": "0.1.488",
+  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.488/MultiCut-0.1.488-arm64.dmg",
+  "notes": "Dragging an edge on the timeline (a song, section, music start or end, drop, cut, or the Export and clip handles) now moves the playhead with it and draws a line through the timeline at that spot.; Timeline lanes can be resized: S, M or L for all lanes, Option-scroll for in between, or drag a lane's",
+  "size": 516801063,
   "items": [
-    "The website shows MultiCut cutting a real drop, with the mixer's sound."
+    "Dragging an edge on the timeline (a song, section, music start or end, drop, cut, or the Export and clip handles) now moves the playhead with it and draws a line through the timeline at that spot.",
+    "Timeline lanes can be resized: S, M or L for all lanes, Option-scroll for in between, or drag a lane's bottom edge to size just that lane. The lane names column can be dragged wider too.",
+    "Panel resize handles have a clearer look and show the size while you drag.",
+    "The Cuts panel's \"Cut every\" list shows which sections are on Auto, and a changed section has its own reset button.",
+    "Timeline menus no longer run off the screen, and putting a setting back to its default no longer marks it as custom.",
+    "Icons throughout the app: step tabs, menus, panel headers, lane names and buttons."
   ]
 }
