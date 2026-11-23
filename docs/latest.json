@@ -1,14 +1,20 @@
 {
-  "version": "0.1.488",
-  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.488/MultiCut-0.1.488-arm64.dmg",
-  "notes": "Dragging an edge on the timeline (a song, section, music start or end, drop, cut, or the Export and clip handles) now moves the playhead with it and draws a line through the timeline at that spot.; Timeline lanes can be resized: S, M or L for all lanes, Option-scroll for in between, or drag a lane's",
-  "size": 516801063,
+  "version": "0.1.491",
+  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.491/MultiCut-0.1.491-arm64.dmg",
+  "notes": "MultiCut finds many more drops and song changes on its own, and places your track files reliably.; Cuts vary more: no fixed camera rotation, phrase-length shots, builds that speed up, and a Re-roll that always gives something new.; New cut styles: punch-ins, a hero camera on each drop, strobe into d",
+  "size": 496322867,
+  "sha256": "09bec1a5de55279b4138fb1d420b481eafc12cfcc4877f0e08ebf91ff26c8f55",
   "items": [
-    "Dragging an edge on the timeline (a song, section, music start or end, drop, cut, or the Export and clip handles) now moves the playhead with it and draws a line through the timeline at that spot.",
-    "Timeline lanes can be resized: S, M or L for all lanes, Option-scroll for in between, or drag a lane's bottom edge to size just that lane. The lane names column can be dragged wider too.",
-    "Panel resize handles have a clearer look and show the size while you drag.",
-    "The Cuts panel's \"Cut every\" list shows which sections are on Auto, and a changed section has its own reset button.",
-    "Timeline menus no longer run off the screen, and putting a setting back to its default no longer marks it as custom.",
-    "Icons throughout the app: step tabs, menus, panel headers, lane names and buttons."
+    "MultiCut finds many more drops and song changes on its own, and places your track files reliably.",
+    "Cuts vary more: no fixed camera rotation, phrase-length shots, builds that speed up, and a Re-roll that always gives something new.",
+    "New cut styles: punch-ins, a hero camera on each drop, strobe into drops, and Shuffle with three choices to pick from.",
+    "Zooms move at a steady speed, follow the music, and can aim at the DJ, pan wide shots, snap, pulse, flash or whip into a drop.",
+    "The crowd sound is now one clean file that stays in time with the mix, with the PA taken out and a level that rides the music.",
+    "Loudness target for YouTube with a one-click fix when the mix would clip; the best room mic is picked for you.",
+    "Render vertical clips straight to MP4, export to Resolve or Final Cut, and get tracklist, subtitle and marker files with every export.",
+    "Import DJ history from rekordbox, Serato, Traktor or a CUE sheet, or let MultiCut find your tracks in your music folder.",
+    "Cameras sync while their previews are still being made, and previews are much faster.",
+    "Projects can be opened from a folder, located when moved, or removed from the list.",
+    "Settings sit in full-height panels, playback is smoother, and MultiCut asks before quitting while it is working."
   ]
 }

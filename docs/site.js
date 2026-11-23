@@ -1,6 +1,6 @@
 // The download button, the version line and the release notes, from latest.json beside this page: the
 // same file the app reads to tell a newer MultiCut is out (desktop/scripts/write-feed.js writes it).
-// No latest.json yet: the button stays "Coming soon".
+// Without latest.json (or without scripts) both buttons still work: they go to the latest release's page.
 "use strict";
 
 /** A .dmg's size as the Finder says it: "556 MB", "1.2 GB" (decimal units). */
@@ -34,6 +34,30 @@ function showMeta(feed) {
   });
 }
 
+/** The .dmg's SHA-256 from the feed (64 hex characters, lower case), or "" when it has none. */
+function checksumOf(feed) {
+  const sha = feed && typeof feed.sha256 === "string" ? feed.sha256.trim().toLowerCase() : "";
+  return /^[0-9a-f]{64}$/.test(sha) ? sha : "";
+}
+
+/** Under the button: the checksum, selected whole on a click, and Copy. */
+function showChecksum(feed) {
+  const sha = checksumOf(feed);
+  const box = document.getElementById("checksum");
+  if (!sha || !box) return;
+  document.getElementById("checksum-value").textContent = sha;
+  const copy = document.getElementById("checksum-copy");
+  copy.addEventListener("click", () => {
+    const done = (word) => {
+      copy.textContent = word;
+      setTimeout(() => (copy.textContent = "Copy"), 2000);
+    };
+    if (navigator.clipboard) navigator.clipboard.writeText(sha).then(() => done("Copied"), () => done("Select it to copy"));
+    else done("Select it to copy");
+  });
+  box.hidden = false;
+}
+
 /** The feed, when it names a version and an https download. */
 function usable(feed) {
   return !!feed && typeof feed.version === "string" && typeof feed.url === "string" && /^https:\/\//.test(feed.url);
@@ -45,17 +69,15 @@ async function show() {
     const res = await fetch("latest.json", { cache: "no-cache" });
     if (res.ok) feed = await res.json();
   } catch {
-    /* no feed: Coming soon */
+    /* no feed: the buttons keep their link to the latest release's page */
   }
   if (!usable(feed)) return;
   const button = document.getElementById("download");
   button.href = feed.url;
   const second = document.getElementById("download-2");
   if (second) second.href = feed.url;
-  button.classList.remove("is-off");
-  button.removeAttribute("aria-disabled");
-  document.getElementById("download-label").textContent = "Download for Mac";
   showMeta(feed);
+  showChecksum(feed);
   const items = noteItems(feed);
   if (items.length) {
     document.getElementById("notes-title").textContent = `What's new in ${feed.version}`;
@@ -117,14 +139,23 @@ function drawSet(set) {
   }));
   // positions without inline styles (the page's security policy allows none): the nearest 1 % class
   for (const span of scale.children) span.className = `at-${Math.round(Number(span.dataset.at))}`;
+  // what a screen reader hears for the strip: the same numbers as the facts beside it
+  document.getElementById("strip").setAttribute("aria-label", stripLabel(set));
   const caption = document.getElementById("set-caption");
   const words = setCaption(set);
   if (caption && words) caption.textContent = words;
   const facts = document.getElementById("set-facts");
-  if (facts) {
-    const parts = [set.name || "", clock(set.duration), `${(set.songs || []).length} songs`, `${(set.drops || []).length} drops`, set.bpm ? `${set.bpm} BPM` : ""].filter(Boolean);
-    facts.replaceChildren(...parts.map((p) => Object.assign(document.createElement("span"), { textContent: p })));
-  }
+  if (facts) facts.replaceChildren(...setFacts(set).map((p) => Object.assign(document.createElement("span"), { textContent: p })));
+}
+
+/** The facts beside the strip: the set's name, length, songs, drops and tempo. */
+function setFacts(set) {
+  return [set.name || "", clock(set.duration), `${(set.songs || []).length} songs`, `${(set.drops || []).length} drops`, set.bpm ? `${set.bpm} BPM` : ""].filter(Boolean);
+}
+
+/** The strip in words, from the same set as the facts (so the two never disagree). */
+function stripLabel(set) {
+  return `The set's ${(set.songs || []).length} songs as a strip across its ${Math.floor(set.duration / 60)} minutes, with its ${(set.drops || []).length} drops marked.`;
 }
 
 /** The strip's caption from the set's own numbers: how long the analysis took and how many cuts it made. */
@@ -143,27 +174,68 @@ async function showSet() {
   }
 }
 
-if (typeof module !== "undefined") module.exports = { clock, formatSize, metaLine, noteItems, setCaption, setStrip, usable };
+/**
+ * Should the drop video be playing? Only while it is on screen, never against the visitor's wishes: not
+ * after they paused it, and not by itself for people who asked for less motion (until they press Play).
+ */
+function videoShouldPlay({ visible, paused, reducedMotion, started }) {
+  if (!visible || paused) return false;
+  return !reducedMotion || !!started;
+}
+
+/**
+ * The drop video. Nothing of it is fetched until it comes near the screen; it plays muted on a loop while
+ * it is on screen and pauses when it leaves. Play/Pause and Sound are always there for everyone. Without
+ * scripts the browser's own controls stay (the `controls` attribute in the page).
+ */
+function watch() {
+  const video = document.getElementById("drop-video");
+  const controls = document.getElementById("video-controls");
+  const toggle = document.getElementById("playpause");
+  const sound = document.getElementById("sound");
+  if (!video || !controls || !toggle || !sound) return;
+  const state = {
+    visible: false,
+    paused: false, // the visitor pressed Pause
+    started: false, // the visitor pressed Play
+    reducedMotion: !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches),
+  };
+  video.controls = false;
+  controls.hidden = false;
+  const label = () => {
+    toggle.textContent = video.paused ? "Play" : "Pause";
+  };
+  const apply = () => {
+    if (videoShouldPlay(state)) video.play().catch(() => {});
+    else video.pause();
+  };
+  video.addEventListener("play", label);
+  video.addEventListener("pause", label);
+  toggle.addEventListener("click", () => {
+    if (video.paused) Object.assign(state, { paused: false, started: true, visible: true });
+    else state.paused = true;
+    apply();
+  });
+  sound.addEventListener("click", () => {
+    video.muted = !video.muted;
+    sound.setAttribute("aria-pressed", String(!video.muted));
+    sound.textContent = video.muted ? "Sound on" : "Sound off";
+  });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver((entries) => {
+      state.visible = entries[entries.length - 1].isIntersecting;
+      apply();
+    }, { threshold: 0.35 }).observe(video);
+  } else {
+    state.visible = true;
+    apply();
+  }
+  label();
+}
+
+if (typeof module !== "undefined") module.exports = { checksumOf, clock, formatSize, metaLine, noteItems, setCaption, setFacts, setStrip, stripLabel, usable, videoShouldPlay };
 else {
   show();
   showSet();
   watch();
-}
-
-/** The drop video: muted on a loop (Sound on toggles it); still for people who asked for less motion. */
-function watch() {
-  const video = document.getElementById("drop-video");
-  const sound = document.getElementById("sound");
-  if (!video || !sound) return;
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    video.removeAttribute("autoplay");
-    video.pause();
-    video.controls = true;
-  }
-  sound.addEventListener("click", () => {
-    video.muted = !video.muted;
-    if (!video.muted && video.paused) video.play().catch(() => {});
-    sound.setAttribute("aria-pressed", String(!video.muted));
-    sound.textContent = video.muted ? "Sound on" : "Sound off";
-  });
 }

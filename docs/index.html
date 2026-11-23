@@ -7,9 +7,20 @@
 <meta name="referrer" content="no-referrer">
 <title>MultiCut · Multicam DJ sets, cut on every drop</title>
 <meta name="description" content="MultiCut edits multicam DJ sets on your Mac: it syncs every camera to the mixer recording, finds the drops, cuts on the beat and hands Premiere Pro a finished multicam edit, plus vertical clips for socials.">
+<link rel="canonical" href="https://aaron-wickham.github.io/multicut-releases/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MultiCut">
+<meta property="og:url" content="https://aaron-wickham.github.io/multicut-releases/">
 <meta property="og:title" content="MultiCut · Multicam DJ sets, cut on every drop">
 <meta property="og:description" content="Every camera synced to the mixer. Every drop found. The edit cut on the beat and finished in Premiere.">
-<meta property="og:image" content="shots/cameras.jpg">
+<meta property="og:image" content="https://aaron-wickham.github.io/multicut-releases/shots/cameras-1440.jpg">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="900">
+<meta property="og:image:alt" content="MultiCut on a real set: both cameras side by side on the same moment, the song map with every drop, and the cut on one timeline.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MultiCut · Multicam DJ sets, cut on every drop">
+<meta name="twitter:description" content="Every camera synced to the mixer. Every drop found. The edit cut on the beat and finished in Premiere.">
+<meta name="twitter:image" content="https://aaron-wickham.github.io/multicut-releases/shots/cameras-1440.jpg">
 <meta name="theme-color" content="#070708">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.png">
@@ -42,19 +53,23 @@
     <div class="wrap hero-text">
       <p class="eyebrow">For multicam DJ sets</p>
       <h1><span class="line">Every camera. Every drop.</span><br><span class="line soft">Cut on the beat.</span></h1>
-      <p class="lede">You filmed the set on two, three, four cameras. MultiCut lines every one of them up with the mixer recording, finds the drops, and builds the multicam edit on the beat. Premiere Pro opens it finished.</p>
+      <p class="lede">You filmed the set on two cameras or more. MultiCut lines every one of them up with the mixer recording, finds the drops, and builds the multicam edit on the beat. Premiere Pro opens it finished.</p>
       <div class="cta">
-        <a class="download is-off" id="download" aria-disabled="true">
+        <a class="download" id="download" href="https://github.com/Aaron-Wickham/multicut-releases/releases/latest">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>
-          <span id="download-label">Coming soon</span>
+          <span id="download-label">Download for Mac</span>
         </a>
         <a class="link-arrow" href="#how">See how it works</a>
       </div>
       <p class="meta" id="meta"><span class="nowrap">Apple silicon</span> · <span class="nowrap">macOS 13 or later</span></p>
+      <p class="checksum" id="checksum" hidden><span class="checksum-label">SHA-256</span> <code id="checksum-value" title="Check the download with: shasum -a 256 MultiCut-*.dmg"></code> <button type="button" class="checksum-copy" id="checksum-copy">Copy</button></p>
     </div>
     <div class="wrap hero-stage">
       <figure class="window">
-        <img src="shots/cameras.jpg" width="2880" height="1800" alt="MultiCut's Cuts step on a real set: both cameras side by side on the same moment, the song map with every drop, the cut and each camera's footage on one timeline." fetchpriority="high">
+        <picture>
+          <source type="image/webp" srcset="shots/cameras-1440.webp 1440w, shots/cameras.webp 2880w" sizes="(min-width: 1200px) 1136px, calc(100vw - 32px)">
+          <img src="shots/cameras.jpg" srcset="shots/cameras-1440.jpg 1440w, shots/cameras.jpg 2880w" sizes="(min-width: 1200px) 1136px, calc(100vw - 32px)" width="2880" height="1800" alt="MultiCut's Cuts step on a real set: both cameras side by side on the same moment, the song map with every drop, the cut and each camera's footage on one timeline." fetchpriority="high" decoding="async">
+        </picture>
       </figure>
       <figure class="phone" aria-label="A vertical clip">
         <div class="phone-screen" role="img" aria-label="A 9:16 clip from the same set, framed on the DJ"></div>
@@ -79,9 +94,12 @@
     <p class="eyebrow">Watch it cut</p>
     <h2 id="watch-title">One drop, cut on the beat.</h2>
     <figure class="window watch-frame">
-      <video id="drop-video" src="shots/drop.mp4" poster="shots/drop.jpg" width="1440" height="900" muted loop playsinline autoplay preload="metadata"
+      <video id="drop-video" src="shots/drop.mp4" poster="shots/drop.jpg" width="1440" height="900" muted loop playsinline controls preload="none"
         aria-label="MultiCut playing through a drop of a real set: the program monitor cuts between both cameras on the beat as the cuts slide past the playhead."></video>
-      <button type="button" class="sound" id="sound" aria-pressed="false">Sound on</button>
+      <div class="video-controls" id="video-controls" hidden>
+        <button type="button" class="video-btn" id="playpause">Play</button>
+        <button type="button" class="video-btn" id="sound" aria-pressed="false">Sound on</button>
+      </div>
     </figure>
     <p class="caption">A drop from the set above, in the app as it is today. Each cut lands on a beat; the sound is the mixer recording.</p>
   </section>
@@ -123,7 +141,12 @@
           <h3>Import</h3>
           <p>Point it at the set folder: the mixer recording and each camera's files. Split camera chapters are joined, and the tracklist names every song.</p>
         </div>
-        <figure class="window"><img src="shots/import.jpg" width="2880" height="1800" loading="lazy" alt="The Import step: the mixer recording, both cameras and the tracklist from the set folder."></figure>
+        <figure class="window">
+          <picture>
+            <source type="image/webp" srcset="shots/import-1440.webp 1440w, shots/import.webp 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)">
+            <img src="shots/import.jpg" srcset="shots/import-1440.jpg 1440w, shots/import.jpg 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)" width="2880" height="1800" alt="The Import step: the mixer recording, both cameras and the tracklist from the set folder." loading="lazy" decoding="async">
+          </picture>
+        </figure>
       </li>
       <li class="step">
         <div class="step-text">
@@ -131,7 +154,12 @@
           <h3>Sync</h3>
           <p>Each recording is lined up with the mixer recording, drift corrected and checked against the camera clock. Each one reads Synced, or asks you to look.</p>
         </div>
-        <figure class="window"><img src="shots/sync.jpg" width="2880" height="1800" loading="lazy" alt="The Sync step: every camera recording lined up with the mixer recording, each marked Synced."></figure>
+        <figure class="window">
+          <picture>
+            <source type="image/webp" srcset="shots/sync-1440.webp 1440w, shots/sync.webp 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)">
+            <img src="shots/sync.jpg" srcset="shots/sync-1440.jpg 1440w, shots/sync.jpg 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)" width="2880" height="1800" alt="The Sync step: every camera recording lined up with the mixer recording, each marked Synced." loading="lazy" decoding="async">
+          </picture>
+        </figure>
       </li>
       <li class="step">
         <div class="step-text">
@@ -139,7 +167,12 @@
           <h3>Drops</h3>
           <p>The music is analysed: beats, bars, songs and the drops. You hear each drop on the picture and answer yes or no. Missed one? Mark it with D.</p>
         </div>
-        <figure class="window"><img src="shots/drops.jpg" width="2880" height="1800" loading="lazy" alt="The Drops step: a drop to check with yes or no, the song map and the mixer's waveform."></figure>
+        <figure class="window">
+          <picture>
+            <source type="image/webp" srcset="shots/drops-1440.webp 1440w, shots/drops.webp 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)">
+            <img src="shots/drops.jpg" srcset="shots/drops-1440.jpg 1440w, shots/drops.jpg 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)" width="2880" height="1800" alt="The Drops step: a drop to check with yes or no, the song map and the mixer's waveform." loading="lazy" decoding="async">
+          </picture>
+        </figure>
       </li>
       <li class="step">
         <div class="step-text">
@@ -147,7 +180,12 @@
           <h3>Cuts</h3>
           <p>The multicam edit, cut on the beat with the camera mix you set, per song or per drop if you like. Where a camera runs out of picture another takes over: never a black frame.</p>
         </div>
-        <figure class="window"><img src="shots/cuts.jpg" width="2880" height="1800" loading="lazy" alt="The Cuts step: the program monitor on a drop, the song map and the cut on the beat."></figure>
+        <figure class="window">
+          <picture>
+            <source type="image/webp" srcset="shots/cuts-1440.webp 1440w, shots/cuts.webp 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)">
+            <img src="shots/cuts.jpg" srcset="shots/cuts-1440.jpg 1440w, shots/cuts.jpg 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)" width="2880" height="1800" alt="The Cuts step: the program monitor on a drop, the song map and the cut on the beat." loading="lazy" decoding="async">
+          </picture>
+        </figure>
       </li>
       <li class="step">
         <div class="step-text">
@@ -155,7 +193,12 @@
           <h3>Motion</h3>
           <p>Slow zooms that build into each drop and release on it, per camera: full, half or off. One setting means the same at every energy.</p>
         </div>
-        <figure class="window"><img src="shots/motion.jpg" width="2880" height="1800" loading="lazy" alt="The Motion step: zooms that build into each drop, set per drop."></figure>
+        <figure class="window">
+          <picture>
+            <source type="image/webp" srcset="shots/motion-1440.webp 1440w, shots/motion.webp 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)">
+            <img src="shots/motion.jpg" srcset="shots/motion-1440.jpg 1440w, shots/motion.jpg 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)" width="2880" height="1800" alt="The Motion step: zooms that build into each drop, set per drop." loading="lazy" decoding="async">
+          </picture>
+        </figure>
       </li>
       <li class="step">
         <div class="step-text">
@@ -163,7 +206,12 @@
           <h3>Export</h3>
           <p>One Premiere Pro project with the cut, the mixer audio, the crowd from the room camera, matched colour and every song and drop as a marker. Open in Premiere hands it over.</p>
         </div>
-        <figure class="window"><img src="shots/export.jpg" width="2880" height="1800" loading="lazy" alt="The Export step: exported to Premiere, with Open in Premiere and the YouTube chapters."></figure>
+        <figure class="window">
+          <picture>
+            <source type="image/webp" srcset="shots/export-1440.webp 1440w, shots/export.webp 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)">
+            <img src="shots/export.jpg" srcset="shots/export-1440.jpg 1440w, shots/export.jpg 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)" width="2880" height="1800" alt="The Export step: exported to Premiere, with Open in Premiere and the YouTube chapters." loading="lazy" decoding="async">
+          </picture>
+        </figure>
       </li>
       <li class="step">
         <div class="step-text">
@@ -171,7 +219,12 @@
           <h3>Clips</h3>
           <p>Vertical 9:16 clips around every drop, framed to follow the DJ, cut and zoomed like the set. Export one or all.</p>
         </div>
-        <figure class="window"><img src="shots/clip.jpg" width="2880" height="1800" loading="lazy" alt="A vertical clip around a drop: the 9:16 frame on the DJ and the clip's own cuts."></figure>
+        <figure class="window">
+          <picture>
+            <source type="image/webp" srcset="shots/clip-1440.webp 1440w, shots/clip.webp 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)">
+            <img src="shots/clip.jpg" srcset="shots/clip-1440.jpg 1440w, shots/clip.jpg 2880w" sizes="(min-width: 1200px) 720px, (min-width: 900px) 62vw, calc(100vw - 32px)" width="2880" height="1800" alt="A vertical clip around a drop: the 9:16 frame on the DJ and the clip's own cuts." loading="lazy" decoding="async">
+          </picture>
+        </figure>
       </li>
     </ol>
   </section>
@@ -205,7 +258,12 @@
           <li>Vertical clips as their own sequences</li>
         </ul>
       </div>
-      <figure class="window"><img src="shots/export.jpg" width="2880" height="1800" loading="lazy" alt="Exported to Premiere: the file, Open in Premiere and Show in Finder."></figure>
+      <figure class="window">
+          <picture>
+            <source type="image/webp" srcset="shots/export-1440.webp 1440w, shots/export.webp 2880w" sizes="(min-width: 1200px) 626px, (min-width: 900px) 55vw, calc(100vw - 32px)">
+            <img src="shots/export.jpg" srcset="shots/export-1440.jpg 1440w, shots/export.jpg 2880w" sizes="(min-width: 1200px) 626px, (min-width: 900px) 55vw, calc(100vw - 32px)" width="2880" height="1800" alt="Exported to Premiere: the file, Open in Premiere and Show in Finder." loading="lazy" decoding="async">
+          </picture>
+        </figure>
     </div>
   </section>
 
@@ -227,9 +285,9 @@
         <details><summary>Which cameras work?</summary><p>Any camera that records sound: MultiCut syncs by the sound it hears. It's tested on GoPro HERO13 Blacks, including files split into chapters and cameras that restarted mid-set.</p></details>
         <details><summary>How many cameras?</summary><p>As many as you filmed with. Sets are tested on two; the number keys put any of the first six on a cut.</p></details>
         <details><summary>Do I need the mixer recording?</summary><p>Yes. It's the clock everything syncs to and the sound of the finished edit.</p></details>
-        <details><summary>Does it upload anything?</summary><p>No. Analysis and editing run on your Mac, offline.</p></details>
+        <details><summary>Does it upload anything?</summary><p>No. Your footage and your music never leave your Mac: all the analysis and editing happens on it. MultiCut goes online only to check for a new version, to fetch its analysis models if they are missing, and to read a SoundCloud tracklist when you give it a link.</p></details>
         <details><summary>Windows or Intel Macs?</summary><p>Not yet: Apple silicon Macs only.</p></details>
-        <details><summary>The first time, macOS says it can't check the app.</summary><p>Open System Settings › Privacy &amp; Security and choose Open Anyway. That happens once.</p></details>
+        <details><summary>macOS says it can't check the app.</summary><p>MultiCut isn't signed with Apple yet. The first time you open each version, open System Settings › Privacy &amp; Security and choose Open Anyway. You do that once for every update you install; new versions come out at most once a day.</p></details>
       </div>
     </div>
   </section>
@@ -241,7 +299,7 @@
         <h2 id="band-title">Your next set, cut on every drop.</h2>
         <p class="meta" id="meta-2">For Mac · Apple silicon · macOS 13 or later</p>
       </div>
-      <a class="btn-outline" id="download-2" href="#">Download for Mac</a>
+      <a class="btn-outline" id="download-2" href="https://github.com/Aaron-Wickham/multicut-releases/releases/latest">Download for Mac</a>
     </div>
   </section>
 
@@ -258,6 +316,7 @@
     <span class="grow"></span>
     <a href="#notes" data-notes hidden>Release notes</a>
     <a href="licences.html">Licences</a>
+    <a href="https://github.com/Aaron-Wickham/multicut-releases/issues">Help and feedback</a>
     <span>Screens shown are the current version, on a real set.</span>
   </div>
 </footer>
