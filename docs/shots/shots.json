@@ -1,61 +1,197 @@
 {
-  "taken": "2026-11-20",
+  "taken": "2026-11-23",
   "shots": [
     {
       "name": "cuts",
       "file": "cuts.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "The Cuts step: the program monitor on a drop, the song map, the cut on the beat and both cameras' footage on one timeline."
+      "alt": "The Cuts step: the program monitor on a drop, the song map, the cut on the beat and both cameras' footage on one timeline.",
+      "variants": [
+        {
+          "file": "cuts.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "cuts-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "cuts-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     },
     {
       "name": "drops",
       "file": "drops.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "The Drops step: each drop the music analysis found, with a picture of the moment, to hear and answer yes or no."
+      "alt": "The Drops step: each drop the music analysis found, with a picture of the moment, to hear and answer yes or no.",
+      "variants": [
+        {
+          "file": "drops.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "drops-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "drops-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     },
     {
       "name": "sync",
       "file": "sync.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "The Sync step: every camera recording lined up with the mixer recording, each marked Synced."
+      "alt": "The Sync step: every camera recording lined up with the mixer recording, each marked Synced.",
+      "variants": [
+        {
+          "file": "sync.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "sync-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "sync-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     },
     {
       "name": "motion",
       "file": "motion.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "The Motion step: slow zooms that build into each drop, per camera."
+      "alt": "The Motion step: slow zooms that build into each drop, per camera.",
+      "variants": [
+        {
+          "file": "motion.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "motion-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "motion-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     },
     {
       "name": "export",
       "file": "export.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "The Export step: the Premiere Pro project, the crowd mix, matched colour and YouTube chapters."
+      "alt": "The Export step: the Premiere Pro project, the crowd mix, matched colour and YouTube chapters.",
+      "variants": [
+        {
+          "file": "export.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "export-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "export-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     },
     {
       "name": "clips",
       "file": "clips.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "The Clips step: vertical clips for socials around the drops."
+      "alt": "The Clips step: vertical clips for socials around the drops.",
+      "variants": [
+        {
+          "file": "clips.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "clips-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "clips-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     },
     {
       "name": "import",
       "file": "import.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "The Import step: the mixer recording and each camera's files from the set folder."
+      "alt": "The Import step: the mixer recording and each camera's files from the set folder.",
+      "variants": [
+        {
+          "file": "import.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "import-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "import-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     },
     {
       "name": "clip",
       "file": "clip.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "A vertical 9:16 clip around a drop, framed on the DJ, as it goes to Instagram or TikTok."
+      "alt": "A vertical 9:16 clip around a drop, framed on the DJ, as it goes to Instagram or TikTok.",
+      "variants": [
+        {
+          "file": "clip.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "clip-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "clip-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     },
     {
       "name": "drop",
@@ -71,7 +207,24 @@
       "file": "cameras.jpg",
       "width": 2880,
       "height": 1800,
-      "alt": "Every camera side by side on the same moment of the set, lined up to the mixer recording."
+      "alt": "Every camera side by side on the same moment of the set, lined up to the mixer recording.",
+      "variants": [
+        {
+          "file": "cameras.webp",
+          "width": 2880,
+          "type": "webp"
+        },
+        {
+          "file": "cameras-1440.jpg",
+          "width": 1440,
+          "type": "jpeg"
+        },
+        {
+          "file": "cameras-1440.webp",
+          "width": 1440,
+          "type": "webp"
+        }
+      ]
     }
   ]
 }

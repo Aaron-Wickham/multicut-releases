@@ -1,5 +1,6 @@
 /* MultiCut's website: the Booth tokens (DESIGN.md: true black, one amber, Inter), set big. Fonts from
-   fonts/, images from shots/ (desktop/scripts/capture-site.js takes them from the real app). Nothing loads
+   fonts/ (Inter cut down to Latin, punctuation and arrows, ~24 KB a weight: pyftsubset, see
+   docs/audit-2026-11-22.md), images from shots/ (desktop/scripts/capture-site.js takes them from the real app). Nothing loads
    from anywhere else. The one signature is the set strip: a real set's songs and drops, amber. */
 @font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url("fonts/Inter-Regular.woff2") format("woff2"); }
 @font-face { font-family: "Inter"; font-weight: 500; font-display: swap; src: url("fonts/Inter-Medium.woff2") format("woff2"); }

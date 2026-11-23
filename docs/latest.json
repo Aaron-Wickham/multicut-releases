@@ -1,20 +1,14 @@
 {
-  "version": "0.1.491",
-  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.491/MultiCut-0.1.491-arm64.dmg",
-  "notes": "MultiCut finds many more drops and song changes on its own, and places your track files reliably.; Cuts vary more: no fixed camera rotation, phrase-length shots, builds that speed up, and a Re-roll that always gives something new.; New cut styles: punch-ins, a hero camera on each drop, strobe into d",
-  "size": 496322867,
-  "sha256": "09bec1a5de55279b4138fb1d420b481eafc12cfcc4877f0e08ebf91ff26c8f55",
+  "version": "0.1.504",
+  "url": "https://github.com/Aaron-Wickham/multicut-releases/releases/download/v0.1.504/MultiCut-0.1.504-arm64.dmg",
+  "notes": "What's New, Check for Updates and Open Project open on the window you chose them from, such as Settings.; Every edit is checked for slivers, bad or frozen frames, unsynced footage and soft zooms; anything left is listed in Export with a jump to it.; The stem model is no longer inside the installer: ",
+  "size": 418364179,
+  "sha256": "f840917efce67e7feffd0c68345de1e2e4e14d7c8e2d106cb297eb3f7e70109f",
   "items": [
-    "MultiCut finds many more drops and song changes on its own, and places your track files reliably.",
-    "Cuts vary more: no fixed camera rotation, phrase-length shots, builds that speed up, and a Re-roll that always gives something new.",
-    "New cut styles: punch-ins, a hero camera on each drop, strobe into drops, and Shuffle with three choices to pick from.",
-    "Zooms move at a steady speed, follow the music, and can aim at the DJ, pan wide shots, snap, pulse, flash or whip into a drop.",
-    "The crowd sound is now one clean file that stays in time with the mix, with the PA taken out and a level that rides the music.",
-    "Loudness target for YouTube with a one-click fix when the mix would clip; the best room mic is picked for you.",
-    "Render vertical clips straight to MP4, export to Resolve or Final Cut, and get tracklist, subtitle and marker files with every export.",
-    "Import DJ history from rekordbox, Serato, Traktor or a CUE sheet, or let MultiCut find your tracks in your music folder.",
-    "Cameras sync while their previews are still being made, and previews are much faster.",
-    "Projects can be opened from a folder, located when moved, or removed from the list.",
-    "Settings sit in full-height panels, playback is smoother, and MultiCut asks before quitting while it is working."
+    "What's New, Check for Updates and Open Project open on the window you chose them from, such as Settings.",
+    "Every edit is checked for slivers, bad or frozen frames, unsynced footage and soft zooms; anything left is listed in Export with a jump to it.",
+    "The stem model is no longer inside the installer: MultiCut downloads it once, the first time you analyse a set (about 84 MB).",
+    "Learning from your drop answers keeps itself up to date; Settings shows how many answers it uses.",
+    "The same camera never jumps: back-to-back shots on one camera become one long shot, and punch-ins are gone."
   ]
 }

@@ -16,11 +16,13 @@
   580.58,
   703.98,
   800.04,
-  812.01,
-  868.51,
+  813.71,
+  868.56,
+  944,
   1053.75,
   1149.82,
   1336.63,
+  1348.63,
   1444.62,
   1485.77,
   1526.93,
@@ -28,6 +30,7 @@
   1609.21,
   1636.64,
   1718.93,
+  1814.48,
   1883.74,
   1911.16,
   1966.02
@@ -35,51 +38,51 @@
  "songs": [
   {
    "start": 13.14,
-   "end": 110.87,
+   "end": 97.16,
    "name": "Hot Meal Records – Ollie Lishman - DROP IT DOWN (Extended Mix)"
   },
   {
-   "start": 110.87,
+   "start": 97.16,
    "end": 246.3,
    "name": "ZUKE – San Andreas Dub [FREE DOWNLOAD]"
   },
   {
    "start": 246.3,
-   "end": 470.87,
+   "end": 453.71,
    "name": "jbsc – BACK2BACK (FREE DL)"
   },
   {
-   "start": 470.87,
-   "end": 580.56,
+   "start": 453.71,
+   "end": 563.44,
    "name": "Hutcher – CALABRIA DUB (FREE DL)"
   },
   {
-   "start": 580.56,
-   "end": 727.95,
+   "start": 563.44,
+   "end": 676.57,
    "name": "Social Club – Aint No Other Man - Social Club. Remix (Free Download)"
   },
   {
-   "start": 727.95,
+   "start": 676.57,
    "end": 808.61,
    "name": "Southpoint – SHUFFA - Mix & Blend"
   },
   {
    "start": 808.61,
-   "end": 947.44,
+   "end": 930.28,
    "name": "Britto – Jump Up The Jam [FREE DL]"
   },
   {
-   "start": 947.44,
-   "end": 1072.77,
+   "start": 930.28,
+   "end": 1021.14,
    "name": "909 RACING TEAM – Ron Carroll - Back Together (909 RACING TEAM Edit) (FREE DOWNLOAD)"
   },
   {
-   "start": 1072.77,
-   "end": 1161.8,
+   "start": 1021.14,
+   "end": 1172.07,
    "name": "Startup Bro – 5 am in Queens"
   },
   {
-   "start": 1161.8,
+   "start": 1172.07,
    "end": 1280.06,
    "name": "LEPS – KLUBBHEADS - DISCOHOPPING (LEPS’ EDIT) [FREE DL]"
   },
@@ -95,11 +98,11 @@
   },
   {
    "start": 1622.92,
-   "end": 1784.06,
+   "end": 1801.19,
    "name": "Club Angel – Lemon"
   },
   {
-   "start": 1784.06,
+   "start": 1801.19,
    "end": 1875.08,
    "name": "Me & George – Party Left"
   },
@@ -109,6 +112,6 @@
    "name": "22 Interns – Billie Eilish - Chihiro (22 Interns Edit) [Free Download]"
   }
  ],
- "analysis_s": 231,
- "cuts": 356
+ "analysis_s": 8,
+ "cuts": 484
 }
